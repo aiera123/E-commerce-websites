@@ -4,6 +4,8 @@ export default function Product({ search = "" }) {
     { id: 2, name: "Face Cream", price: "Rs. 800" },
     { id: 3, name: "Perfume", price: "Rs. 1200" },
     { id: 4, name: "Shampoo", price: "Rs. 600" },
+    { id: 5, name: "Body Lotion", price: "Rs. 700" },
+    { id: 6, name: "Foundation", price: "Rs. 900" },
   ];
   const filteredProducts = products.filter((item) =>
     item.name.toLowerCase().includes(search.toLowerCase())
