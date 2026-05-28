@@ -3,6 +3,14 @@ import { useCart } from "../context/CartContext";
 import lipgloss from "../assets/lipgloss.jpg";
 import facecream from "../assets/facecream.jpg";
 import perfume from "../assets/perfume.jpg";
+import {Swiper, SwiperSlide} from "swiper/react";
+import "swiper/css";
+import "swiper/css/navigation";
+import { Navigation, Autoplay } from "swiper/modules";
+import banner1 from "../assets/banner1.jpg";
+import banner2 from "../assets/banner2.jpg";
+import banner3 from "../assets/banner3.jpg";
+import banner4 from "../assets/banner4.jpg";
 
 export default function Home() {
    const { addToCart, cart } = useCart();
@@ -23,6 +31,61 @@ export default function Home() {
           Shop Now
         </Link>
       </div>
+      {/* Carousel Section */}
+<div className="p-6">
+
+  <Swiper
+    modules={[Navigation, Autoplay]}
+    navigation
+    autoplay={{ delay: 3000 }}
+    spaceBetween={20}
+    slidesPerView={1}
+    loop={true}
+  >
+
+    <SwiperSlide>
+      <div className="flex justify-center items-center bg-pink-50 h-[400px] rounded-2xl shadow-md">
+      <img
+        src={banner1}
+        alt="Banner 1"
+        className="h-[350px] object-cover"
+      />
+      </div>
+    </SwiperSlide>
+
+    <SwiperSlide>
+      <div className="flex justify-center items-center bg-pink-50 h-[400px] rounded-2xl shadow-md">
+      <img
+        src={banner2}
+        alt="Banner 2"
+        className="h-[350px] object-cover"
+        />
+        </div>
+    </SwiperSlide>
+
+    <SwiperSlide>
+      <div className="flex justify-center items-center bg-pink-50 h-[400px] rounded-2xl shadow-md">
+      <img
+        src={banner3}
+        alt="Banner 3"
+        className="h-[350px] object-cover"
+        />
+        </div>
+      
+    </SwiperSlide>
+
+    <SwiperSlide>
+      <div className="flex justify-center items-center bg-pink-50 h-[400px] rounded-2xl shadow-md">
+      <img
+        src={banner4}
+        alt="Banner 4"
+        className="h-[350px] object-cover" 
+      />
+      </div>
+    </SwiperSlide>
+
+  </Swiper>
+</div>
 
       {/* Featured Section */}
       <div className="p-6">
@@ -42,9 +105,18 @@ export default function Home() {
     <h3 className="text-xl font-semibold mt-3">Lip Gloss</h3>
             <p className="text-gray-500 mt-1">Shiny & long lasting</p>
 
-            <button className="mt-4 bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition">
-              Add to Cart 
-            </button>
+        <button
+  onClick={() =>
+    addToCart({
+      name: "Lip Gloss",
+      price: 499,
+      image: lipgloss
+    })
+  }
+  className="mt-4 bg-pink-500 text-white px-4 py-2 rounded-lg hover:bg-pink-600 transition"
+>
+  Add to Cart
+</button>
           </div>
 
           {/* Face Cream */}

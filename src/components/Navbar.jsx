@@ -36,6 +36,9 @@ const StyledInputBase = styled(InputBase)({
   width: "100%",
   paddingLeft: "40px",
 });
+//const { cart } = useCart();
+
+{/* <span>🛒 {cart.length}</span> */}
 
 export default function SearchAppBar({ search, setSearch }) {
   return (
